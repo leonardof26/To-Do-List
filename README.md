@@ -1,4 +1,4 @@
-![Image of GymPoint](https://www.pinclipart.com/picdir/big/109-1098476_checklist-poll-task-to-do-list-clipboard-comments.png)
+<img src="https://www.pinclipart.com/picdir/big/109-1098476_checklist-poll-task-to-do-list-clipboard-comments.png"  height="50">
 
 # To-Do List
 
@@ -12,10 +12,10 @@ Next, there are some images from the final application.
 
 ## App Screenshots
 
-<img src="https://i.ibb.co/TMQhnbx/Screen-Shot-2020-12-02-at-6-09-43-PM.png" width="250" height="200">
-<img src="https://i.ibb.co/0GKRjTK/Screen-Shot-2020-12-02-at-6-09-31-PM.png" width="250" height="200">
-<img src="https://i.ibb.co/2qggN3x/Screen-Shot-2020-12-02-at-6-09-27-PM.png" width="250" height="200">
-<img src="https://i.ibb.co/TMQhnbx/Screen-Shot-2020-12-02-at-6-09-43-PM.png" width="250" height="200">
+<img src="https://i.ibb.co/TMQhnbx/Screen-Shot-2020-12-02-at-6-09-43-PM.png" width="250" height="390">
+<img src="https://i.ibb.co/0GKRjTK/Screen-Shot-2020-12-02-at-6-09-31-PM.png" width="250" height="390">
+<img src="https://i.ibb.co/2qggN3x/Screen-Shot-2020-12-02-at-6-09-27-PM.png" width="250" height="390">
+<img src="https://i.ibb.co/TMQhnbx/Screen-Shot-2020-12-02-at-6-09-43-PM.png" width="250" height="390">
 
 # How to run the project
 
