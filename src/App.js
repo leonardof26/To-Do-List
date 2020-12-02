@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import { Text, Alert, View, AsyncStorage } from 'react-native'
+import { Text, Alert, View } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import {
   Container,
@@ -118,8 +119,14 @@ const App = () => {
           value={toDoInput}
           onChangeText={setToDoInput}
           onSubmitEditing={handleSubmit}
+          testID="taskInput"
+          placeholder="Digite a sua tarefa"
         />
-        <AddButton onPress={handleSubmit} isEditing={taskBeingEdited}>
+        <AddButton
+          testID="addButton"
+          onPress={handleSubmit}
+          isEditing={taskBeingEdited}
+        >
           <ButtonText>{taskBeingEdited ? 'Editar' : 'Adicionar'}</ButtonText>
         </AddButton>
         {taskBeingEdited ? (
@@ -132,6 +139,7 @@ const App = () => {
       {toDolist.length ? (
         <ToDoList
           data={toDolist}
+          testID="toDoList"
           keyExtractor={item => String(item.id)}
           renderItem={({ item: toDo, index }) => (
             <ToDoItem
