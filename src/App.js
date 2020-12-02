@@ -15,17 +15,25 @@ import {
   ToDoItem,
   DeleteButton,
   DeleteText,
+  TaskDescription,
 } from './styles'
 
 const App = () => {
   const [toDolist, setTodoList] = useState([])
   const [toDoInput, setToDoInput] = useState('')
   const [firstLoad, setFirstLoad] = useState(true)
-  const [taskBeingEdited, setTaskBeingEdited] = useState({})
+  const [taskBeingEdited, setTaskBeingEdited] = useState()
 
-  function handleSubmit() {
-    if (!toDoInput) return
+  function updateTask() {
+    const newTodoList = [...toDolist]
+    newTodoList[taskBeingEdited.index].task = toDoInput
 
+    setTodoList(newTodoList)
+    setTaskBeingEdited(null)
+    setToDoInput('')
+  }
+
+  function createNewTask() {
     const maxId = toDolist.length ? toDolist[toDolist.length - 1].id : 0
     const newId = maxId + 1
     const newTodo = { id: newId, task: toDoInput }
@@ -34,6 +42,17 @@ const App = () => {
 
     setTodoList(newTodoList)
     setToDoInput('')
+  }
+
+  function handleSubmit() {
+    if (!toDoInput) return
+
+    if (taskBeingEdited) {
+      updateTask()
+      return
+    }
+
+    createNewTask()
   }
 
   function handleDeleteTask(task) {
@@ -82,6 +101,12 @@ const App = () => {
     setFirstLoad(false)
   }, [])
 
+  useEffect(() => {
+    if (!taskBeingEdited) return
+
+    setToDoInput(taskBeingEdited.task)
+  }, [taskBeingEdited])
+
   return (
     <Container>
       <Logo>
@@ -114,7 +139,12 @@ const App = () => {
                 borderBottomWidth: index !== toDolist.length - 1 ? 1 : 0,
               }}
             >
-              <Text>{toDo.task}</Text>
+              <TaskDescription
+                onPress={() => setTaskBeingEdited({ ...toDo, index })}
+              >
+                <Text>{toDo.task}</Text>
+              </TaskDescription>
+
               <DeleteButton
                 onPress={() => handleDeleteButton(index)}
                 disabled={taskBeingEdited}

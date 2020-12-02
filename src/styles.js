@@ -1,5 +1,7 @@
 import styled from 'styled-components/native'
 
+import { RectButton } from 'react-native-gesture-handler'
+
 export const Container = styled.View`
   flex: 1;
   background: #f1f1f1;
@@ -83,6 +85,11 @@ export const ToDoItem = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+`
+
+export const TaskDescription = styled(RectButton)`
+  width: 90%;
+  height: 100%;
 `
 
 export const DeleteButton = styled.TouchableOpacity`
