@@ -13,7 +13,7 @@ describe('Main Page', () => {
   })
 
   it('should add a task to the List', () => {
-    const { getByTestId, getByText, getBy } = render(<App />)
+    const { getByTestId, getByText } = render(<App />)
 
     const taskInput = getByTestId('taskInput')
     const addButton = getByText('Adicionar')
